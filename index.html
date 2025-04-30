@@ -3,21 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Flashcards</title>
+    <title>Word and Picture Match</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Interactive Flashcards</h1>
-        
-        <div class="flashcard-container">
-            <!-- Flashcards will be dynamically inserted here -->
+    <div class="game-wrapper">
+        <div class="progress-bar" id="progress-bar">
+            <!-- Progress emojis will be dynamically inserted here -->
         </div>
 
-        <div class="game-container">
-            <h2>Matching Game</h2>
-            <div class="matching-game">
-                <!-- Matching game cards will be dynamically inserted here -->
+        <div class="container">
+            <h1>Drag Words to Match Pictures!</h1>
+            
+            <div class="flashcard-container">
+                <!-- Flashcards will be dynamically inserted here -->
+            </div>
+
+            <div class="game-container">
+                <h2>Find the Picture for Each Word</h2>
+                <div class="matching-game">
+                    <!-- Matching game cards will be dynamically inserted here -->
+                </div>
+            </div>
+            <div class="game-controls">
+                <div class="game-length-control">
+                    <label for="game-length">Game Length:</label>
+                    <input type="range" id="game-length" min="4" max="16" value="16" step="4">
+                    <span id="game-length-value">16 cards</span>
+                </div>
+                <button class="restart-button">Play!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Congratulation Modal -->
+    <div class="modal" id="congratulation-modal">
+        <div class="modal-content">
+            <h2>Great Job! 🎉</h2>
+            <p>You matched all the words correctly!</p>
+        </div>
+    </div>
+
+    <!-- Game Finished Modal -->
+    <div class="modal" id="game-finished-modal">
+        <div class="modal-content">
+            <h2>Congratulations! 🏆</h2>
+            <p>You've matched all the words!</p>
+            <p>Want to do this one more time?</p>
+            <div class="modal-buttons">
+                <button class="modal-button yes-button">Yes!</button>
+                <button class="modal-button no-button">No, thanks</button>
             </div>
         </div>
     </div>
